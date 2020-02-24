@@ -4,11 +4,12 @@ import React, { Component } from 'react';
 
 
   const  TodoList = (props) =>{
-        debugger
-    return props.map(todo => {
+        
+    return props.name.map(todo => {
+      // debugger
       return (
-        <li value={todo.name} key={todo.code}>
-          {todo.name}
+        <li value={todo} key={todo}>
+          {todo}
         </li>
       );
     });
