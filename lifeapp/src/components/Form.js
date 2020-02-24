@@ -1,4 +1,6 @@
 import React from "react"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Todo from "./Todo"
 
 
@@ -14,17 +16,19 @@ handler = e => {
       [e.target.name]: e.target.value
     });
     // debugger
-    console.log(this.state.name)
+    // console.log(this.state.name)
 }
 
 todo = (e) =>{
     e.preventDefault();    
     this.setState({submit: true})
     this.onAddItem();
+    this.notify(this.state.value)
     // debugger
 };
 
 onAddItem = () => {
+    
     this.setState(state => {
       const name = state.name.concat(state.value);
     //   debugger
@@ -34,6 +38,9 @@ onAddItem = () => {
       };
     });
   };
+
+   notify = (todo) => toast(todo+"!!");
+
 
 
 
